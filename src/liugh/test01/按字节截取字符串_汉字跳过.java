@@ -2,7 +2,7 @@ package liugh.test01;
 
 import java.io.UnsupportedEncodingException;
 
-public class Main {
+public class 按字节截取字符串_汉字跳过 {
 	
 //	public static void main(String[] args) {
 //		String srcStr1 = "我ABC";
