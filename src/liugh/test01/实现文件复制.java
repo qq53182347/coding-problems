@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class 实现文件复制 {
 	public static void main(String[] args)throws IOException{
-		 copy(System.getProperties()+"/src/liugh/test01/Main.java","D:/test.java");
+		 copy("src/fos.txt","D:/fos.txt");
 	}
 	
 	public static void copy(String src,String desk)throws IOException{
