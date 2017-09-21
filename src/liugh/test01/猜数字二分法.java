@@ -37,14 +37,13 @@ public class 猜数字二分法 {
        	 System.out.println(computerNum);
        	//计数
             count++;
+            mid=(computerNum+myInputGuessNumber)/2;
             if(computerNum>myInputGuessNumber){//假如猜的数myInputGuessNumber =10000   电脑随机生成的数 computerNum =20000    所以下来猜10000-15000
            	 System.out.println("Larger");
-           	 mid=(computerNum+myInputGuessNumber)/2;
            	 computerNum= rand.nextInt(mid+1-myInputGuessNumber)+myInputGuessNumber;
             }
             if(computerNum<myInputGuessNumber){//假如猜的数myInputGuessNumber =10000   电脑随机生成的数 computerNum =5000    所以下来猜7500-10000
            	 System.out.println("Smaller");
-           	 mid=(computerNum+myInputGuessNumber)/2;
            	 computerNum= rand.nextInt(myInputGuessNumber+1-mid)+mid;  
             }
             if(count>18){
