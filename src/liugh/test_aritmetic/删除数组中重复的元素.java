@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class 删除数组中重复的元素 {
 	public static void main(String[] args) {   
-        int[] a = {1, 1, 2, 2, 3};   
+        int[] a = {1, 1, 2, 2, 2, 3};   
+        //int[] a = {1, 2, 1, 2, 3}; //没排好序的不行
         a = removeDuplicates(a);   
         System.out.println(Arrays.toString(a));   
    }
