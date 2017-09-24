@@ -1,0 +1,70 @@
+你能写一个拦截器吗？你知道的有那几个步骤？
+
+Tomcat中写了“hello”在页面中显示不出来，可能存在哪些问题？
+
+用过哪些web容器？
+
+请说出你所知道的线程同步的方法
+	wait():使一个线程处于等待状态，并且释放所持有的对象的lock。
+	sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。
+	notify():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。
+	notityAll():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。
+
+如何解决中文乱码问题？
+	request.seCharacterEncoding("gbk");
+
+jsp，servlet如何转发请求? 
+	servlet的转发方式有两种：response.sendRedirect(response.encodeURL(相对路径或绝对路径));
+	request.getRequestDispatcher(相对路径).forward();
+	jsp是servlet的扩展，除可用上面两种之外，还可以用标签：<jsp:forward page="相对路径" />
+
+
+JSP的内置对象及方法? 
+  request表示HttpServletRequest对象。它包含了有关浏览器请求的信息，并且提供了几个用于获取cookie, header, 和session数据的有用的方法。 
+  response表示HttpServletResponse对象，并提供了几个用于设置送回 浏览器的响应的方法（如cookies,头信息等） 
+  out对象是javax.jsp.JspWriter的一个实例，并提供了几个方法使你能用于向浏览器回送输出结果。 
+  pageContext表示一个javax.servlet.jsp.PageContext对象。它是用于方便存取各种范围的名字空间、servlet相关的对象的API，并且包装了通用的servlet相关功能的方法。 
+  session表示一个请求的javax.servlet.http.HttpSession对象。Session可以存贮用户的状态信息 
+  applicaton 表示一个javax.servle.ServletContext对象。这有助于查找有关servlet引擎和servlet环境的信息 
+  config表示一个javax.servlet.ServletConfig对象。该对象用于存取servlet实例的初始化参数。 
+  page表示从该页面产生的一个servlet实例
+  
+  
+JSP中动态INCLUDE与静态INCLUDE的区别? 
+	动态INCLUDE用jsp:include动作实现 <jsp:include page="included.jsp" flush="true" />它总是会检查所含文件中的变化，适合用于包含动态页面，并且可以带参数。
+	静态INCLUDE用include伪码实现,定不会检查所含文件的变化，适用于包含静态页面<%@ include file="included.htm" %> 
+  
+Object类（或者其子类）的finalize（）方法在什么情况下被调用? 
+    1.finalize方法是Java语言根基类Object类中所包含的一个方法，
+		   这个方法是保护类型的方法（protected），由于在Java应用中开发的所有类都为Object的子类
+		   ，因此用户类都从Object对象中隐式地继承了该方法。因此，我们在Java类中可以调用其父类的finalize方法，
+		   并且可以覆盖自身继承来的finalize方法。虽然我们可以在一个Java类中调用其父类的finalize方法，
+		   但是由于finalize方法没有自动实现递归调用，我们必须手动实现，
+		   因此finalize函数的最后一个语句通常是super.finalize()语句。通过这种方式，
+		   我们可以实现从下到上finalize的迭代调用，即先释放用户类自身的资源，然后再释放父类的资源。
+		   通常我们可以在finalize方法中释放一些不容易控制，并且非常重要的资源，
+		   例如：一些I/O的操作，数据的连接。这些资源的释放对整个应用程序是非常关键的。
+	2.finalize方法最终是由JVM中的垃圾回收器调用的
+		，由于垃圾回收器调用finalize的时间是不确定或者不及时的，
+		调用时机对我们来说是不可控的，因此，有时我们需要通过其他的手段来释放程序中所占用的系统资源，
+		比如自己在类中声明一个destroy()方法，在这个方法中添加释放系统资源的处理代码，
+		当你使用完该对象后可以通过调用这个destroy()方法来释放该对象内部成员占用的系统资源。
+		虽然我们可以通过调用自己定义的destroy()方法释放系统资源，
+		但是还是建议你最好将对destroy()方法的调用放入当前类的finalize()方法体中，
+		因为这样做更保险，更安全。在类深度继承的情况下，这种方法就显得更为有效了，
+		我们可以通过递归调用destroy的方法在子类被销毁的时候释放父类所占用的资源。
+		
+		
+error和exception有什么区别?
+    Error表示系统级的错误和程序不必处理的异常，
+	Exception表示需要捕捉或者需要程序进行处理的异常。
+	
+	
+Overloaded的方法是否可以改变返回值的类型?? 	
+      Overloaded的方法是可以改变返回值的类型。
+      
+J2EE是技术还是平台还是框架？
+	J2EE本身是一个标准,一个为企业分布式应用的开发提供的标准平台.
+	J2EE也是一个框架,包括JDBC、JNDI、RMI、JMS、EJB、JTA等技术.
+	      
+

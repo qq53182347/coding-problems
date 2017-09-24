@@ -1,0 +1,58 @@
+如何删除一个表中重复的数据
+delete from score 
+where id in (
+     select  c.id  
+    from  score c  inner join 
+          (
+              select s.sno,s.sname 
+              from score s
+              group by s.sno,s.sname   having count(*)>1
+          ) d     
+          on c.sno=d.sno and c.sname=d.sname
+          left join (
+             select  min(id) as sid
+              from score s
+              group by s.sno,s.sname
+              having count(*)>1
+          ) e  on c.id=e.sid
+    where e.sid is null
+)
+
+谈谈你对ORACLE权限管理的认识
+
+Oracle中有哪些集合函数
+          总的个数：COUNT（）
+	总和：SUM（）
+	平均数：AVG（）
+	最大数：MAX（）
+	最小数：MIN（）
+存储过程与函数的区别
+	存储过程和函数目的是为了 可重复地 执行操作数据库的sql语句的集合。
+		存储过程的参数列表可以有输入参数、输出参数、可输入输出的参数；存储过程的返回值，可以有多个值，
+		函数的参数列表只有输入参数，并且有return <返回值类型，无长度说明>	,函数的返回值，只有一个值。
+Oracle中的树状查询?
+
+存储过程中的异常处理
+
+
+Rowid是什么，每个表中是否都有rowid
+
+如何从游标中取出数据
+
+对游标的理解
+	游标提供了一种从表中检索数据并对数据进行操作的灵活手段，
+	其主要应用在服务器上，处理有客户端发送给服务器的SQL语句或是批处理、存储过程、触发器中的数据请求，
+	通过游标可以定位到结果集得某一行，并对数据执行特定的操作，大大方便了数据的处理过程。
+	
+怎样处理查询语句多条一样重复语句？
+
+是否了解数据库优化？
+	
+
+statement 和 preparedStatement的区别
+   I.preparedStatement是statement的子类
+   II.preparedStatement尽最大可能提高了性能
+   III.preparedStatement提高了安全性
+  
+知不知道decode函数的作用
+

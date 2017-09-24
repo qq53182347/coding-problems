@@ -1,0 +1,135 @@
+谈谈你对“面向对象”的理解
+
+你认为B/S网站与网站的区别
+
+Java中字符编码集处理
+
+Servlet的初始化在什么时候进行，有几种方式？
+
+Java中异常处理
+
+动态验证码怎么做的？
+
+Ajax工作流程
+	1.客户端产生js的事件
+	2.创建XMLHttpRequest对象
+	3.对XMLHttpRequest进行配置
+	4.通过AJAX引擎发送异步请求
+	5.服务器端接收请求并且处理请求，返回html或者xml内容
+	6.XML调用一个callback()处理响应回来的内容
+	7.页面局部刷新
+	
+Try可以抛出异常和捕捉异常吗
+
+什么是通讯服务器、tomcat的工作原理。
+
+多用户连接通讯服务器，某个用户要向指定的用户发送信息，
+服务器怎么知道是哪个用户发送给哪个用户的（例如：QQ软件）请说明工作原理。
+
+web服务器如何与页面之间建立Scoket连接
+
+当多个用户连接服务器时，怎么检测用户是否已经离线，当抛出Connection reset时说明什么
+
+浏览器BOM是什么概念，英文全称是什么
+
+用数据流传送图片时，出现多纹，图片不全，是什么情况？
+
+子线程的优先级与其父级的线程线程优先级哪个大？
+
+JSP的四种绘画，三大指令是什么？
+
+谈谈对Herberlate的理解
+
+你怎么处理在“竞拍过程中同时竞拍的问题”？
+
+十六进制100转换为十进制为?
+
+IPV4地址是由--32--位二进制组成
+
+www的协议是---http ，默认端口号是---80
+
+xml的解析方式
+   DOM解析,JDOM解析,SAX解析
+   
+java中如何将xxx编码格式转换为xxx编码格式
+	public String changeCharset(String str,String newSet,String oldSet){
+		if(str!=null){
+			byte[] bs = str.getBytes(oldSet);
+			return new String(bs,newSet);
+		}
+	        return null;
+	}
+	
+一般写clone()方法的时候，方法体中都会有一句话
+	return super.clone();
+	
+有多少种方式可以实现参数传递？分别说说	
+
+
+在webLogic中，用户等待太多,如何优化是最有效的
+
+将文件夹a（包括其下所有子文件夹和文件）复制到文件夹b下。
+要求：使用10个线程同时进行，每一个线程独立处理一个文件。
+	public class CopyDirectory { 
+    static String url1 = "f:/photos"; 
+    static String url2 = "d:/tempPhotos"; 
+    public static void main(String args[]) throws IOException { 
+        (new File(url2)).mkdirs(); 
+        File[] file = (new File(url1)).listFiles(); 
+        for (int i = 0; i < file.length; i++) { 
+            if (file[i].isFile()) { 
+                copyFile(file[i],new File(url2+file[i].getName())); 
+            } 
+            if (file[i].isDirectory()) { 
+                String sourceDir=url1+File.separator+file[i].getName(); 
+                String targetDir=url2+File.separator+file[i].getName(); 
+                copyDirectiory(sourceDir, targetDir); 
+            } 
+        } 
+    } 
+public static void copyFile(File sourceFile,File targetFile)  
+throws IOException{ 
+        FileInputStream input = new FileInputStream(sourceFile); 
+        BufferedInputStream inBuff=new BufferedInputStream(input); 
+        FileOutputStream output = new FileOutputStream(targetFile); 
+        BufferedOutputStream outBuff=new BufferedOutputStream(output); 
+        byte[] b = new byte[1024 * 5]; 
+        int len; 
+        while ((len =inBuff.read(b)) != -1) { 
+            outBuff.write(b, 0, len); 
+        } 
+        outBuff.flush(); 
+        inBuff.close(); 
+        outBuff.close(); 
+        output.close(); 
+        input.close(); 
+    } 
+    public static void copyDirectiory(String sourceDir, String targetDir) 
+            throws IOException { 
+        (new File(targetDir)).mkdirs(); 
+        File[] file = (new File(sourceDir)).listFiles(); 
+        for (int i = 0; i < file.length; i++) { 
+            if (file[i].isFile()) { 
+                File sourceFile=file[i]; 
+               File targetFile=new  
+File(new File(targetDir).getAbsolutePath() 
++File.separator+file[i].getName()); 
+                copyFile(sourceFile,targetFile); 
+            } 
+            if (file[i].isDirectory()) { 
+                String dir1=sourceDir + "/" + file[i].getName(); 
+                String dir2=targetDir + "/"+ file[i].getName(); 
+                copyDirectiory(dir1, dir2); 
+            } 
+        } 
+	
+
+
+1.将对象a中的值（限于符合标准getter、setter命名规范， 可通过 getter、setter访问） ，
+	复制到对象b中（可处理所有基本类型及引用类型；可处理直接或间接循环引用）。 
+2.将对象a中的值（限于符合标准getter、setter命名规范，可通过 getter、setter访问），
+	还原到其类中预定义的默认值。 
+
+
+
+
