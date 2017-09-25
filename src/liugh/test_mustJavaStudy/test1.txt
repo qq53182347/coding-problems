@@ -1,14 +1,32 @@
 谈谈你对“面向对象”的理解
+	网上讲的详细的很多，我讲个我当时面试的回答，一个瞎扯淡的例子:(等我起床用电脑，手机打字太慢了)
+	“假设我是女娲，我准备捏一些人，
+	首先，人应该有哪些基本特征：
+	1.有四肢 2.有大脑 3.有器官 4.有思想 我们就有了第一个模型，这就是抽象。
+	其次，我和西方上帝是好友，我想我的这个想法能够提供给他用，但是我不想让他知道里面细节是怎么捏出来的，用的什么材料，他也不用考虑那么多，只要告诉我他要捏什么样的人就可以了。这就是封装。
+	然后，我之后创造的人都以刚才的模型做为模板，我创造的人都有我模型的特征 这就是继承。
+	最后，我觉得为了让人更丰富多彩，暗合阴阳之原理，可以根据模型进行删减，某些人上半身器官多突起那么一丢丢，下面少那么一丢丢。某些人，下半身多突起那么一丢丢。这就是多态。
+	嘿嘿，当然为了，更丰富多彩，那么一丢丢大小也是可以有区别的。。。” 此时，面试官要是男的你可以露出你懂得的表情！
+	程序员面试都很枯燥，你可以适当弄点笑点，是加分项。
+
 
 你认为B/S网站与网站的区别
+	网站是B/S结构 ，系统软件是C/S结构。
+	B/S是Brower/Server的缩写，客户机上只要安装一个浏览器(Browser)，如Netscape Navigator或Internet Explorer，服务器安装Oracle、Sybase、Informix或 SQL Server等数据库。浏览器通过Web Server 同数据库进行数据交互。  
+	C/S又称Client/Server或客户/服务器模式。服务器通常采用高性能的PC、工作站或小型机，并采用大型数据库系统，如Oracle、Sybase、Informix或 SQL Server。客户端需要安装专用的客户端软件。
 
 Java中字符编码集处理
+	http://blog.sina.com.cn/s/blog_5920510a0101ijj5.html
+
 
 Servlet的初始化在什么时候进行，有几种方式？
 
+
 Java中异常处理
+	http://www.importnew.com/14688.html
 
 动态验证码怎么做的？
+	http://div.io/topic/500
 
 Ajax工作流程
 	1.客户端产生js的事件
@@ -19,37 +37,53 @@ Ajax工作流程
 	6.XML调用一个callback()处理响应回来的内容
 	7.页面局部刷新
 	
-Try可以抛出异常和捕捉异常吗
+	
+try可以抛出异常和捕捉异常吗。
+
 
 什么是通讯服务器、tomcat的工作原理。
+
 
 多用户连接通讯服务器，某个用户要向指定的用户发送信息，
 服务器怎么知道是哪个用户发送给哪个用户的（例如：QQ软件）请说明工作原理。
 
-web服务器如何与页面之间建立Scoket连接
 
-当多个用户连接服务器时，怎么检测用户是否已经离线，当抛出Connection reset时说明什么
+web服务器如何与页面之间建立Scoket连接。
 
-浏览器BOM是什么概念，英文全称是什么
 
-用数据流传送图片时，出现多纹，图片不全，是什么情况？
+当多个用户连接服务器时，怎么检测用户是否已经离线，当抛出Connection reset时说明什么。
+
+
+浏览器BOM是什么概念，英文全称是什么。
+
+
+用数据流传送图片时，出现多纹，图片不全，是什么情况。
+
 
 子线程的优先级与其父级的线程线程优先级哪个大？
 
-JSP的四种绘画，三大指令是什么？
 
-谈谈对Herberlate的理解
+JSP的四种会话，三大指令是什么？
+
+
+谈谈对Herberlate的理解。
+
 
 你怎么处理在“竞拍过程中同时竞拍的问题”？
 
+
 十六进制100转换为十进制为?
 
-IPV4地址是由--32--位二进制组成
 
-www的协议是---http ，默认端口号是---80
+IPV4地址是由--32--位二进制组成。
+
+
+www的协议是---http ，默认端口号是---80。
+
 
 xml的解析方式
-   DOM解析,JDOM解析,SAX解析
+   DOM解析,JDOM解析,SAX解析。
+   
    
 java中如何将xxx编码格式转换为xxx编码格式
 	public String changeCharset(String str,String newSet,String oldSet){
@@ -59,18 +93,21 @@ java中如何将xxx编码格式转换为xxx编码格式
 		}
 	        return null;
 	}
+
 	
 一般写clone()方法的时候，方法体中都会有一句话
 	return super.clone();
 	
-有多少种方式可以实现参数传递？分别说说	
+	
+有多少种方式可以实现参数传递？分别说说。	
 
 
-在webLogic中，用户等待太多,如何优化是最有效的
+在webLogic中，用户等待太多,如何优化是最有效的。
+
 
 将文件夹a（包括其下所有子文件夹和文件）复制到文件夹b下。
 要求：使用10个线程同时进行，每一个线程独立处理一个文件。
-	public class CopyDirectory { 
+   public class CopyDirectory { 
     static String url1 = "f:/photos"; 
     static String url2 = "d:/tempPhotos"; 
     public static void main(String args[]) throws IOException { 
@@ -87,8 +124,7 @@ java中如何将xxx编码格式转换为xxx编码格式
             } 
         } 
     } 
-public static void copyFile(File sourceFile,File targetFile)  
-throws IOException{ 
+    public static void copyFile(File sourceFile,File targetFile) throws IOException{ 
         FileInputStream input = new FileInputStream(sourceFile); 
         BufferedInputStream inBuff=new BufferedInputStream(input); 
         FileOutputStream output = new FileOutputStream(targetFile); 
@@ -112,8 +148,8 @@ throws IOException{
             if (file[i].isFile()) { 
                 File sourceFile=file[i]; 
                File targetFile=new  
-File(new File(targetDir).getAbsolutePath() 
-+File.separator+file[i].getName()); 
+			File(new File(targetDir).getAbsolutePath() 
+			+File.separator+file[i].getName()); 
                 copyFile(sourceFile,targetFile); 
             } 
             if (file[i].isDirectory()) { 
@@ -122,14 +158,12 @@ File(new File(targetDir).getAbsolutePath()
                 copyDirectiory(dir1, dir2); 
             } 
         } 
-	
 
 
 1.将对象a中的值（限于符合标准getter、setter命名规范， 可通过 getter、setter访问） ，
 	复制到对象b中（可处理所有基本类型及引用类型；可处理直接或间接循环引用）。 
 2.将对象a中的值（限于符合标准getter、setter命名规范，可通过 getter、setter访问），
 	还原到其类中预定义的默认值。 
-
 
 
 
