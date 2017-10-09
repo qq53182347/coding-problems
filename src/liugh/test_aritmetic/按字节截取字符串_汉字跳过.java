@@ -9,7 +9,7 @@ public class 按字节截取字符串_汉字跳过 {
 //		String srcStr2 = "我ABC汉DEF";
 //
 //		splitString(srcStr1, 4);
-//		splitString(srcStr2, 6);
+//		splitString(srcStr2, 6); 
 //	}
 
 	public static String split(String str,int len) {
