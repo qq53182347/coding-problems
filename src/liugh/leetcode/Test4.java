@@ -23,10 +23,6 @@ public class Test4 {
 	 
 	 public  static double  merge( int[] nums1,int[] nums2){
 		 int length =nums1.length + nums2.length;
-//		 int[] c = new int[length];
-//	     System.arraycopy(nums1, 0, c, 0, nums1.length);  
-//	     System.arraycopy(nums2, 0, c, nums1.length, nums2.length);
-//		 Arrays.sort(c);
 		 int[] c = mergeArray1(nums1,nums2);
 		 double m =c[length/2];
 		 if(length%2==0){
