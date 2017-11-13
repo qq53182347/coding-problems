@@ -2,9 +2,6 @@ package liugh.test_JavaDesignMode.行为模式.策略模式.strategy;
 
 /**
  * 策略接口
- * 
- * @author liu yuning
- *
  */
 public interface Strategy {
     public void algorithmInterface();

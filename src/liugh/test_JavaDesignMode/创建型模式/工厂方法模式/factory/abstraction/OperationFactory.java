@@ -11,14 +11,12 @@ import liugh.test_JavaDesignMode.创建型模式.工厂方法模式.factory.simp
 
 /**
  * 利用反射改造简单工厂模式，去掉分支判断的逻辑
- * 
- * @author liu yuning
  *
  */
 public class OperationFactory {
     private static Map<String, Class<?>> allOperationMaps = new HashMap<String, Class<?>>();
 
-    public static void fillMap() {
+    static {
 	allOperationMaps.put("+", OperationAdd.class);
 	allOperationMaps.put("-", OperationSub.class);
 	allOperationMaps.put("*", OperationMul.class);
@@ -29,7 +27,6 @@ public class OperationFactory {
 	    throws InstantiationException, IllegalAccessException {
 	Operation operation;
 
-	fillMap();
 	Class<?> operationClass = allOperationMaps.get(operator);
 
 	if (operationClass == null) {
